@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="spotify.svg">
+    <title>Sportifai</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Sportifai</h1>
+        <div class="search-wrapper">
+          <button id="btnKembali" onclick="resetPencarian()">←</button>
+          <div class="search-box">
+            <input
+              type="text"
+              id="kolomCari"
+              placeholder="Cari lagu favoritmu..."
+              oninput="kendaliTampilan()"
+            />
+          </div>
+        </div>
+      </header>
+
+      <div id="sectionRekomendasi">
+        <div class="section-title">Artis Populer</div>
+        <div class="grid-artis" id="artisGrid"></div>
+
+        <div class="section-title">Lagu Untukmu</div>
+        <div class="list-lagu" id="laguRandomGrid">
+          <p style="color: var(--text-dim)">Memuat lagu...</p>
+        </div>
+      </div>
+
+      <div id="sectionHasil" class="hidden">
+        <div class="section-title">Hasil Pencarian</div>
+        <div id="daftarHasil" class="list-lagu"></div>
+      </div>
+    </div>
+
+    <div id="modalDetail" onclick="this.style.display = 'none'">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modalImg" src="" />
+        <h3 id="modalTitle"></h3>
+        <p id="modalArtist" style="color: var(--text-dim)"></p>
+      </div>
+    </div>
+
+    <script src="env.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

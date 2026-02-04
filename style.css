@@ -1,0 +1,163 @@
+:root {
+  --bg-color: #121212;
+  --card-bg: #181818;
+  --card-hover: #282828;
+  --primary-color: #1db954;
+  --text-main: #ffffff;
+  --text-dim: #b3b3b3;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  padding: 40px 0;
+}
+
+header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#btnKembali {
+  background: #242424;
+  border: none;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box {
+  flex-grow: 1;
+  position: relative;
+}
+input {
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: none;
+  background: #242424;
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+}
+input:focus {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.section-title {
+  margin: 30px 0 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Grid Artis */
+.grid-artis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.kartu-artis {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+.kartu-artis:hover {
+  background: var(--card-hover);
+}
+.kartu-artis img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* List Lagu (Digunakan untuk Random & Hasil Cari) */
+.list-lagu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-lagu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.item-lagu:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.item-lagu img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.item-lagu .info {
+  flex-grow: 1;
+}
+.item-lagu small {
+  color: var(--text-dim);
+}
+
+.hidden {
+  display: none;
+}
+
+#modalDetail {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+.modal-content {
+  background: #282828;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 350px;
+}
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
